@@ -1,0 +1,11 @@
+{
+  "name": "plats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./assets/sass/style.scss:./assets/css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
