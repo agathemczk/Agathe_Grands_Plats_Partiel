@@ -54,6 +54,29 @@ function displayRecipes(recettes) {
     updateIngredientsFilter(uniqueIngredients);
 }
 
+function updateIngredientsFilter(ingredients) {
+    const ingredientsList = document.getElementById('ingredients-list');
+    ingredientsList.innerHTML = '';
+    let count = 0;
+
+    ingredients.forEach(ingredient => {
+        if (count >= 30) return;
+
+        const li = document.createElement('li');
+        li.classList.add('tags-ingredients');
+
+        const button = document.createElement('button');
+        button.classList.add('dropdown-item', 'btn-tag-ingredient');
+        button.type = 'button';
+        button.value = ingredient;
+        button.textContent = ingredient;
+        li.appendChild(button);
+        ingredientsList.appendChild(li);
+
+        count++;
+    });
+}
+
 function attachSearchListener() {
     const searchInput = document.getElementById("search");
     const recipes = document.querySelectorAll(".col");
